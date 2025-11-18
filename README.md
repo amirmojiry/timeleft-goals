@@ -30,4 +30,4 @@ npm run build
    git subtree push --prefix dist origin gh-pages
    ```
 
-   Or configure [GitHub Actions for Vite + Pages](https://vite.dev/guide/static-deploy.html#github-pages) to automate it.
+   Or enable the included `.github/workflows/deploy.yml` workflow (requires Pages enabled in repo settings) to build on `main` and deploy automatically.
