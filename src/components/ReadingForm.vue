@@ -2,6 +2,7 @@
 import { reactive } from 'vue'
 import {
   GoalType,
+  type GenderSelection,
   type ReadingCadence,
   type ReadingGoalInput,
 } from '../domain/lifetimeCalculator'
@@ -12,6 +13,8 @@ const form = reactive({
   cadence: 'daily' as ReadingCadence,
   pagesPerHour: 30,
   avgPagesPerBook: 300,
+  countryCode: '',
+  gender: '',
 })
 
 type FormErrors = {
@@ -35,6 +38,19 @@ const emit = defineEmits<{
 const cadenceOptions: Array<{ label: string; value: ReadingCadence }> = [
   { label: 'Minutes per day', value: 'daily' },
   { label: 'Minutes per week', value: 'weekly' },
+]
+
+const countryOptions = [
+  { label: 'Use global average', value: '' },
+  { label: 'Finland (FI)', value: 'FI' },
+  { label: 'Iran (IR)', value: 'IR' },
+  { label: 'United States (US)', value: 'US' },
+]
+
+const genderOptions: Array<{ label: string; value: '' | GenderSelection }> = [
+  { label: 'Not specified (use average)', value: '' },
+  { label: 'Female', value: 'female' },
+  { label: 'Male', value: 'male' },
 ]
 
 function validate(): boolean {
@@ -80,6 +96,8 @@ function handleSubmit() {
     pagesPerHour: form.pagesPerHour,
     avgPagesPerBook: form.avgPagesPerBook,
     goalType: GoalType.Reading,
+    countryCode: form.countryCode || undefined,
+    gender: (form.gender || undefined) as GenderSelection | undefined,
   })
 }
 </script>
@@ -155,6 +173,33 @@ function handleSubmit() {
         <p v-if="errors.avgPagesPerBook" class="error">
           {{ errors.avgPagesPerBook }}
         </p>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field flex-1">
+        <label for="country">Country (optional)</label>
+        <select id="country" v-model="form.countryCode">
+          <option
+            v-for="option in countryOptions"
+            :key="option.value || 'default'"
+            :value="option.value"
+          >
+            {{ option.label }}
+          </option>
+        </select>
+      </div>
+      <div class="field flex-1">
+        <label for="gender">Gender (optional)</label>
+        <select id="gender" v-model="form.gender">
+          <option
+            v-for="option in genderOptions"
+            :key="option.value || 'any'"
+            :value="option.value"
+          >
+            {{ option.label }}
+          </option>
+        </select>
       </div>
     </div>
 

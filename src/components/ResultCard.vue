@@ -33,6 +33,8 @@ const summarySentence = computed(() => {
 
   return `If you keep this pace, you might be able to read about ${formattedBooks.value} books of around ${formattedPages.value} pages each in the rest of your life.`
 })
+
+const expectancyLabel = computed(() => props.result.lifeExpectancyLabel)
 </script>
 
 <template>
@@ -58,6 +60,9 @@ const summarySentence = computed(() => {
     </ul>
     <p class="summary">
       {{ summarySentence }}
+    </p>
+    <p class="note">
+      {{ expectancyLabel }}
     </p>
   </section>
 </template>
@@ -106,5 +111,11 @@ strong {
   font-size: 1rem;
   color: #0f172a;
   line-height: 1.5;
+}
+
+.note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #475467;
 }
 </style>

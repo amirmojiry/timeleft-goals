@@ -1,0 +1,73 @@
+{
+  "global": {
+    "all": {
+      "atBirth": 73,
+      "remainingYearsByAgeBand": {
+        "0-19": 65,
+        "20-39": 50,
+        "40-59": 30,
+        "60-79": 15
+      }
+    }
+  },
+  "FI": {
+    "male": {
+      "atBirth": 79,
+      "remainingYearsByAgeBand": {
+        "0-19": 63,
+        "20-39": 49,
+        "40-59": 31,
+        "60-79": 16
+      }
+    },
+    "female": {
+      "atBirth": 84,
+      "remainingYearsByAgeBand": {
+        "0-19": 68,
+        "20-39": 54,
+        "40-59": 34,
+        "60-79": 18
+      }
+    }
+  },
+  "IR": {
+    "male": {
+      "atBirth": 76,
+      "remainingYearsByAgeBand": {
+        "0-19": 60,
+        "20-39": 46,
+        "40-59": 28,
+        "60-79": 14
+      }
+    },
+    "female": {
+      "atBirth": 79,
+      "remainingYearsByAgeBand": {
+        "0-19": 62,
+        "20-39": 48,
+        "40-59": 29,
+        "60-79": 15
+      }
+    }
+  },
+  "US": {
+    "male": {
+      "atBirth": 76,
+      "remainingYearsByAgeBand": {
+        "0-19": 60,
+        "20-39": 45,
+        "40-59": 27,
+        "60-79": 13
+      }
+    },
+    "female": {
+      "atBirth": 81,
+      "remainingYearsByAgeBand": {
+        "0-19": 65,
+        "20-39": 51,
+        "40-59": 32,
+        "60-79": 16
+      }
+    }
+  }
+}
