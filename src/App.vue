@@ -31,5 +31,9 @@ function handleSubmit(payload: ReadingGoalInput) {
     </section>
 
     <ResultCard v-if="result" :result="result" />
+
+    <footer class="footer">
+      Crafted with care by <strong>Amir Mojiri</strong>.
+    </footer>
   </main>
 </template>

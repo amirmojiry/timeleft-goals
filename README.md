@@ -2,6 +2,8 @@
 
 Estimate how many books you can realistically read for the rest of your life. This MVP is structured for future goals and routes, and ships as a static site via Vite.
 
+Live demo: <https://amirmojiry.github.io/timeleft-goals/>
+
 ## Getting started
 
 ```bash
@@ -19,6 +21,14 @@ npm run dev
 ```bash
 npm run build
 ```
+
+### Roadmap
+
+- [ ] Support additional goal types such as exercise or skill-building.
+- [ ] Introduce a routing layer and multi-step flow for configuring each goal.
+- [ ] Expand the lifetime model with configurable expectancy and health inputs.
+- [ ] Persist user profiles locally so returning visitors can compare scenarios.
+- [ ] Add charts or visual timelines to better communicate progress.
 
 ### Deploy to GitHub Pages
 
