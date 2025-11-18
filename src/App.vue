@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import ReadingForm from './components/ReadingForm.vue'
 import ResultCard from './components/ResultCard.vue'
+import LifespanVisualizer from './components/LifespanVisualizer.vue'
 import {
   calculateReadingLifetime,
   type LifetimeReadingResult,
@@ -29,6 +30,8 @@ function handleSubmit(payload: ReadingGoalInput) {
     <section class="panel">
       <ReadingForm @submit="handleSubmit" />
     </section>
+
+    <LifespanVisualizer v-if="result" :result="result" />
 
     <ResultCard v-if="result" :result="result" />
 

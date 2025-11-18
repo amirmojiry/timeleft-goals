@@ -17,6 +17,7 @@ export interface ReadingGoalInput {
 
 export interface LifetimeReadingResult {
   goalType: GoalType
+  currentAge: number
   expectedAge: number
   yearsLeft: number
   daysLeft: number
@@ -69,6 +70,7 @@ export function calculateReadingLifetime(
 
   return {
     goalType: input.goalType ?? GoalType.Reading,
+    currentAge: input.currentAge,
     expectedAge,
     yearsLeft,
     daysLeft,
